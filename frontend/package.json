@@ -23,7 +23,6 @@
     "uuid": "^14.0.0"
   },
   "devDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.60.3",
     "@types/express": "^5.0.6",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",

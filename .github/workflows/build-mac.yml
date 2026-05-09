@@ -6,6 +6,9 @@ on:
       - 'v*'
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build-mac:
     runs-on: macos-latest
@@ -14,9 +17,22 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: cd frontend && npm install
-      - run: cd frontend && npm run package:mac
-      - uses: actions/upload-artifact@v4
+      - name: Install dependencies
+        run: cd frontend && npm install --verbose
+      - name: Build macOS app
+        run: cd frontend && npm run package:mac
+        env:
+          DEBUG: electron-builder
+      - name: Upload DMG
+        uses: actions/upload-artifact@v4
         with:
           name: LLMProxy-macOS
           path: frontend/release/*.dmg
+      - name: Upload debug logs (if failed)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mac-build-logs
+          path: |
+            /Users/runner/Library/Logs/electron-builder*
+            frontend/release/*.yml
