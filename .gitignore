@@ -5,3 +5,7 @@
 !README.md
 !LICENSE
 !.gitignore
+!.github/
+!.github/**/*
+!frontend/
+!frontend/package.json

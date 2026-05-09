@@ -1,0 +1,22 @@
+name: Build macOS
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-mac:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: cd frontend && npm install
+      - run: cd frontend && npm run package:mac
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LLMProxy-macOS
+          path: frontend/release/*.dmg

@@ -1,0 +1,81 @@
+{
+  "name": "llmproxy-ui",
+  "version": "0.5.0",
+  "description": "LLMProxy - Agent protocol translation proxy management UI | 二班的Eric Xu",
+  "main": "dist-electron/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "dev:vite": "vite",
+    "build": "vite build && tsc -p tsconfig.electron.json && node -e \"require(\\\"fs\\\").writeFileSync(\\\"dist-electron/package.json\\\", JSON.stringify({type:\\\"commonjs\\\"}))\"",
+    "package": "npm run build && electron-builder --win",
+    "start": "electron .",
+    "preview": "vite preview",
+    "package:mac": "npm run build && electron-builder --mac",
+    "package:win": "npm run build && electron-builder --win"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "lucide-react": "^1.14.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-router-dom": "^7.15.0",
+    "uuid": "^14.0.0"
+  },
+  "devDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.60.3",
+    "@types/express": "^5.0.6",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@types/uuid": "^10.0.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.2",
+    "electron": "^36.1.0",
+    "electron-builder": "^25.1.1",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.3",
+    "vite": "^5.4.19",
+    "wait-on": "^8.0.3"
+  },
+  "build": {
+    "appId": "com.llmproxy.ui",
+    "productName": "LLMProxy",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "assets/**/*",
+      "!**/data/**",
+      "!**/release/**",
+      "!**/*.db"
+    ],
+    "win": {
+      "target": "msi",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.ico",
+      "category": "public.app-category.developer-tools"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  },
+  "author": "二班的Eric Xu"
+}
