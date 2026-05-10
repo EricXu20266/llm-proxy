@@ -2,7 +2,7 @@
 
 > Codex Desktop & Claude CLI → DeepSeek 本地协议翻译代理 | Agent Protocol Translation Proxy
 
-LLMProxy 是一个 Windows 桌面应用，在本地 127.0.0.1 启动协议翻译代理服务，让 Codex Desktop（Responses API）和 Claude Cwork（Anthropic Messages API）无缝接入 DeepSeek 等 OpenAI 兼容的三方大模型供应商。
+LLMProxy 是一个运行在 Windows 以及 Mac OS 上的桌面应用，在本地 127.0.0.1 启动协议翻译代理服务，让 Codex Desktop（Responses API）和 Claude Cwork（Anthropic Messages API）无缝接入 DeepSeek 等 OpenAI 兼容的三方大模型供应商。
 
 此代理仅在两个智能体的桌面版测试成功，CLI上未进行测试。
 
@@ -32,7 +32,16 @@ LLMProxy 是一个 Windows 桌面应用，在本地 127.0.0.1 启动协议翻译
 ---
 
 ## 验证
+### Apple Mac OS version "LLMProxy-0.5.0.dmg" SHA256
+```
+SHA256: 77f3a49a8a784d5529769dec4ad0cd70a6697884428616fa36b90112a0fad3e7
+```
 
+```bash
+shasum -a 256 "LLMProxy-0.5.0.dmg"
+```
+
+### Microsoft Windows version "LLMProxy 0.5.0.msi" SHA256
 ```
 SHA256: 94833a63b865522ad3cd6d93aa4a76cc46b105b7386f8aa44948a872f9635374
 ```
