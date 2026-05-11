@@ -44,4 +44,18 @@ certutil -hashfile "LLMProxy 0.5.2.msi" SHA256
 
 ### macOS — `LLMProxy-0.5.2-arm64.dmg`
 ```
-SHA256: 1deb4db01c5ab40775d6a4bfecd407
+SHA256: 1deb4db01c5ab40775d6a4bfecd4077f4c27bddf16e3883122cdb2ae7fa6a060
+```
+```bash
+shasum -a 256 "LLMProxy-0.5.2-arm64.dmg"
+```
+
+---
+
+## 作者
+
+**二班的Eric Xu**
+
+## 协议
+
+MIT License
