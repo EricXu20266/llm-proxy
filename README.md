@@ -34,14 +34,14 @@ LLMProxy 是一个运行在 Windows 以及 Mac OS 上的桌面应用，在本地
 
 ## 验证
 
-### Windows — `LLMProxy 0.5.1.msi`
+### Windows — `LLMProxy 0.5.2.msi`
 ```
-SHA256: 3c7df1429e1c87afbe8fa0a3e8f308acbbe5debdbac1d01b514b39965be7968b
+SHA256: 6cc62204d2bbd4039bfcd6427bce285f9533228a5037302df2bb8e9f5205b4ca
 ```
 ```bash
-certutil -hashfile "LLMProxy 0.5.1.msi" SHA256
+certutil -hashfile "LLMProxy 0.5.2.msi" SHA256
 ```
 
-### macOS — `LLMProxy-0.5.1-arm64.dmg`
+### macOS — `LLMProxy-0.5.2-arm64.dmg`
 ```
-SHA256: b3ea12cd53009451b298073ac2c6c9
+SHA256: 1deb4db01c5ab40775d6a4bfecd407
